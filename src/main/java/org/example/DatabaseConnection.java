@@ -10,7 +10,7 @@ public class DatabaseConnection {
     // Because when we are setting up the connection from Java to MySQL
     // It is a costly operation and having multiple connections are not necessary
     static Connection connection = null;
-    public Connection getConnection() {
+    public static Connection getConnection() {
         // if pre-existing connection exists
         // return the existing connection
         if (connection != null) {
@@ -22,11 +22,11 @@ public class DatabaseConnection {
         return getConnection(user, password, db_name);
     }
 
-    private Connection getConnection(String user, String password, String db_name) {
+    private static Connection getConnection(String user, String password, String db_name) {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/" + db_name + "?user=" + user + "?password" + password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/searchengineapp?user=root&password=Miao$980505");
         }
         catch (SQLException | ClassNotFoundException Exception) {
             Exception.printStackTrace();
