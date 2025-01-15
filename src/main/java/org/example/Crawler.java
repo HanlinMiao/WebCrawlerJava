@@ -38,6 +38,6 @@ public class Crawler {
     }
     public static void main(String[] args) {
         Crawler crawler = new Crawler();
-        crawler.getPageTextsAndLinks("https://www.javatpoint.com/", 1);
+        crawler.getPageTextsAndLinks("https://www.wikipedia.org/", 1);
     }
 }
